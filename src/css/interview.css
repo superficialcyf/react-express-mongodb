@@ -1,0 +1,17 @@
+.questionItem{
+    width: 48%;
+}
+.questionItem textarea{
+    width: 100%;
+    height: 420px;
+    resize: none;
+    overflow: auto;
+}
+.addNewQuestion{
+    display: flex;
+    justify-content: space-around;
+}
+textarea{
+    resize: none;
+    overflow: auto;
+}

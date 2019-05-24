@@ -1,0 +1,45 @@
+@import "~antd/dist/antd.css";
+#root,.HaiNan,#routerPage{
+    height: 100%;
+    width: 100%;
+}
+.noShow{
+    display: none;
+}
+.ant-row,.ant-col,.component{
+    height: 100%;
+}
+/*顶部按钮操作行 */
+.button-header-row{
+    text-align: right;
+    background-color: white;
+    padding: 7px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.button-header-row button{
+    margin: 0 10px;
+}
+/* 输入框搜索行 */
+.input-row{
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #eeeeee;
+}
+.input-row input{
+    width: 100%;
+    border: 1px solid #e6e6e6;
+}
+/* 小按钮操作行 */
+.button-row{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #eeeeee;
+}
+.button-row button{
+    margin: 0 5px;
+}
+.caozuo button{
+    margin: 0 10px;
+}

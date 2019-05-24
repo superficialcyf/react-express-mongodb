@@ -1,0 +1,27 @@
+section{
+    width: 100%;
+    height: 100%;
+}
+main{
+    height: calc(100% - 64px);
+}
+.topNavActive{
+    background-color: rgba(255,248,220,.2);
+}
+header{
+    background-color: #3ca6e1!important;
+}
+#modulesNav a:hover{
+    color: white;
+}
+#modulesNav span,#modulesNav a{
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+.activeModule{
+    background-color:rgba(0,0,0,.1);
+}
