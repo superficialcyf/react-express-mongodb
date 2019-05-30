@@ -27,18 +27,17 @@ export default class CommonTable extends Component{
     }
 
     handleSubmit(values){
-       let pathName = this.props.pathname.replace('/','');
-       let url = '';
+      let pathName = this.props.pathname.replace('/','');
        switch (pathName) {
-            case 'cssinterview':url = '/interview/addOrEditcss';values['type'] = 'css';break;
-            case 'jsinterview':url = '/interview/addOrEdijs';values['type'] = 'js';break;
-            case 'vueinterview':url = '/interview/addOrEdivue';values['type'] = 'vue';break;
-            case 'reactinterview':url = '/interview/addOrEdireact';values['type'] = 'react';break;
-            case 'httpinterview':url = '/interview/addOrEdihttp';values['type'] = 'http';break;
+            case 'cssinterview':values['type'] = 'css';break;
+            case 'jsinterview':values['type'] = 'js';break;
+            case 'vueinterview':values['type'] = 'vue';break;
+            case 'reactinterview':values['type'] = 'react';break;
+            case 'httpinterview':values['type'] = 'http';break;
             default:break;
        }
        Post(
-        url,
+        '/interview/addInterview',
         values,
         (data)=>{
           message.success(data[0].msg);
@@ -149,7 +148,7 @@ export default class CommonTable extends Component{
               showHeader:true,
               footer:undefined,
               rowSelection:{},
-              scroll:{y:700},
+              scroll:{y:567},
               rowSelection:{}
           }
 

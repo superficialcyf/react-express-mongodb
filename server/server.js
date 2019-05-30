@@ -11,8 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 const router = express.Router();
 
-router.use((req, res, next) => {
-  router.get('/searchInterview', (req, res) => {
+app.use('/interview/searchInterview',(req,res)=>{
     let path = req.query.type;
     let Type = {'type':''};
     switch (path) {
@@ -22,6 +21,7 @@ router.use((req, res, next) => {
       case 'reactinterview':Type.type = 'react';break;
       case 'httpinterview':Type.type = 'http';break;
     }
+    
     Interviews.find(Type,(err,data)=>{
       if(err){
         next(err);
@@ -30,21 +30,19 @@ router.use((req, res, next) => {
         res.json(data);
       }
     })
-  });//按条件查询列表
-  router.post('/addOrEditcss',(req,res)=>{
-    Interviews.insertMany(req.body,(err,data)=>{
-      if(err){
-        next(err);
-        res.json([{code:1,msg:'添加失败'}]);
-      }else{
-        res.json([{code:0,msg:'添加成功'}]);
-      }
-    })
-  });//添加或修改单个数据
-  next();
+}); 
+app.use('/interview/addInterview',(req,res,next)=>{
+  const time = new Date();
+  req.body['time'] = time.toLocaleString();
+  Interviews.insertMany(req.body,(err,data)=>{ 
+    if(err){
+      next(err);
+      res.json([{code:1,msg:'添加失败'}]);
+    }else{
+      res.json([{code:0,msg:'添加成功'}]);
+    }
+  })
 })
-
-app.use('/interview', router); //添加router中间件
 
 app.listen(3003, () => {
   console.log('node server is listening 3003');

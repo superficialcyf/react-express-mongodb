@@ -33,6 +33,7 @@ class Interview extends Component{
         return(
             <div id="cssInterview">
                  <CommonTable data={this.state.tableData} pathname={this.props.location.pathname}/>
+                 <h2 style={{textAlign:'center',padding:'10px',margin:'0'}}>This is a Interview question management system write by Chen Yufeng</h2>
             </div>
         )
     }
